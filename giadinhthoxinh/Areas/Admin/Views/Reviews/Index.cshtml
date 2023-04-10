@@ -1,0 +1,52 @@
+﻿@model IEnumerable<giadinhthoxinh.Models.tblReview>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.iStarRating)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dtReviewTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tblProduct.sProductName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tblUser.sEmail)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.iStarRating)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dtReviewTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tblProduct.sProductName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tblUser.sEmail)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PK_iReviewID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PK_iReviewID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PK_iReviewID })
+        </td>
+    </tr>
+}
+
+</table>

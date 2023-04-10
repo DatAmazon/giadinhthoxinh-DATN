@@ -1,0 +1,59 @@
+﻿@model giadinhthoxinh.Models.tblImportOrder
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tblImportOrder</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.dtDateAdded)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dtDateAdded)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sDeliver)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sDeliver)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.iState)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.iState)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tblUser.sEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tblUser.sEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tblSupplier.sSupplierName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tblSupplier.sSupplierName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PK_iImportOrderID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

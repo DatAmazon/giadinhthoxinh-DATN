@@ -1,0 +1,82 @@
+﻿@model IEnumerable<giadinhthoxinh.Models.tblProduct>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.sProductName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sDescribe)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sColor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sSize)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sImage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sUnit)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tblCategory.sCategoryName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tblPromote.sPromoteName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.sProductName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sDescribe)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sColor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sSize)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sImage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sUnit)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tblCategory.sCategoryName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tblPromote.sPromoteName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PK_iProductID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PK_iProductID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PK_iProductID })
+        </td>
+    </tr>
+}
+
+</table>

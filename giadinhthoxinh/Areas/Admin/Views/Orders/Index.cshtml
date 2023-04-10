@@ -1,0 +1,88 @@
+﻿@model IEnumerable<giadinhthoxinh.Models.tblOrder>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.sCustomerName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sCustomerPhone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sDeliveryAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dInvoidDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sBiller)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.iDeliveryMethod)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fSurcharge)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.iPaid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.iState)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tblUser.sEmail)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.sCustomerName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sCustomerPhone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sDeliveryAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dInvoidDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sBiller)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.iDeliveryMethod)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fSurcharge)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.iPaid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.iState)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tblUser.sEmail)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PK_iOrderID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PK_iOrderID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PK_iOrderID })
+        </td>
+    </tr>
+}
+
+</table>

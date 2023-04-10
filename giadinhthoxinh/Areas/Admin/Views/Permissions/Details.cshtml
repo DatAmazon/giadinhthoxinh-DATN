@@ -1,0 +1,35 @@
+﻿@model giadinhthoxinh.Models.tblPermission
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tblPermission</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.sPermissionName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sPermissionName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.iState)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.iState)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PK_iPermissionID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

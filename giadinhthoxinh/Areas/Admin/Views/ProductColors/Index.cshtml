@@ -1,0 +1,52 @@
+﻿@model IEnumerable<giadinhthoxinh.Models.tblProductColor>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PK_iProductColorID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FK_iProductID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sProductColor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tblProduct.sProductName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.PK_iProductColorID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.FK_iProductID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.sProductColor)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.tblProduct.sProductName)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.PK_iProductColorID }) |
+        @Html.ActionLink("Details", "Details", new { id = item.PK_iProductColorID }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.PK_iProductColorID })
+    </td>
+</tr>
+}
+
+</table>

@@ -1,0 +1,97 @@
+﻿@model giadinhthoxinh.Models.tblProduct
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>tblProduct</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.sProductName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sProductName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sDescribe)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sDescribe)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sColor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sColor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sSize)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sSize)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sImage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sImage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sUnit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sUnit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tblCategory.sCategoryName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tblCategory.sCategoryName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tblPromote.sPromoteName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tblPromote.sPromoteName)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

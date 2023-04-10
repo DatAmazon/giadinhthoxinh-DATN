@@ -1,0 +1,51 @@
+﻿@model giadinhthoxinh.Models.tblSupplier
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tblSupplier</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.sSupplierName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sSupplierName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sPhone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sPhone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sAddress)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PK_iSupplierID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

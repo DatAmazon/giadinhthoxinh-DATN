@@ -1,0 +1,51 @@
+﻿@model giadinhthoxinh.Models.tblCheckinDetail
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tblCheckinDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.iQuatity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.iQuatity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tblImportOrder.sDeliver)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tblImportOrder.sDeliver)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tblProduct.sProductName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tblProduct.sProductName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PK_iCheckinDetailID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

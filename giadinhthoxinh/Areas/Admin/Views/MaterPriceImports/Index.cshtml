@@ -1,0 +1,52 @@
+﻿@model IEnumerable<giadinhthoxinh.Models.tblMaterPriceImport>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.fMaterPriceImport)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dtStartDay)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dtEndDay)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tblMaterial.sMaterialName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.fMaterPriceImport)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dtStartDay)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dtEndDay)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tblMaterial.sMaterialName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PK_iMaterPriceImportID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PK_iMaterPriceImportID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PK_iMaterPriceImportID })
+        </td>
+    </tr>
+}
+
+</table>

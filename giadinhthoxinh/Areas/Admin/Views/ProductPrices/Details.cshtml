@@ -1,0 +1,51 @@
+﻿@model giadinhthoxinh.Models.tblProductPrice
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tblProductPrice</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.fPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dtStartDay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dtStartDay)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dtEndDay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dtEndDay)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tblProduct.sProductName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tblProduct.sProductName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PK_iProductPriceID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,52 @@
+﻿@model IEnumerable<giadinhthoxinh.Models.tblMaterial>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.sMaterialName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sDescribe)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.iQuatity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sUnit)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.sMaterialName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sDescribe)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.iQuatity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sUnit)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PK_iMaterialID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PK_iMaterialID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PK_iMaterialID })
+        </td>
+    </tr>
+}
+
+</table>

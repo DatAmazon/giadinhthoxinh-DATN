@@ -1,0 +1,58 @@
+﻿@model IEnumerable<giadinhthoxinh.Models.tblImportOrder>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.dtDateAdded)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sDeliver)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.iState)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tblUser.sEmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tblSupplier.sSupplierName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.dtDateAdded)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sDeliver)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.iState)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tblUser.sEmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tblSupplier.sSupplierName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PK_iImportOrderID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PK_iImportOrderID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PK_iImportOrderID })
+        </td>
+    </tr>
+}
+
+</table>

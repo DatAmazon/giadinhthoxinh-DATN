@@ -1,0 +1,51 @@
+﻿@model giadinhthoxinh.Models.tblMaterial
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tblMaterial</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.sMaterialName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sMaterialName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sDescribe)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sDescribe)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.iQuatity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.iQuatity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sUnit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sUnit)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PK_iMaterialID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,52 @@
+﻿@model IEnumerable<giadinhthoxinh.Models.tblPromote>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.sPromoteName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sPromoteRate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dtStartDay)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dtEndDay)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.sPromoteName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sPromoteRate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dtStartDay)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dtEndDay)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PK_iPromoteID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PK_iPromoteID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PK_iPromoteID })
+        </td>
+    </tr>
+}
+
+</table>

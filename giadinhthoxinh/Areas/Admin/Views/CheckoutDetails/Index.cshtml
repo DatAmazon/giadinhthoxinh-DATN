@@ -1,0 +1,52 @@
+﻿@model IEnumerable<giadinhthoxinh.Models.tblCheckoutDetail>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.iQuantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tblOrder.sCustomerName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tblProduct.sProductName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.iQuantity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tblOrder.sCustomerName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tblProduct.sProductName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PK_iCheckoutDetailID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PK_iCheckoutDetailID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PK_iCheckoutDetailID })
+        </td>
+    </tr>
+}
+
+</table>
